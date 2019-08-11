@@ -19,6 +19,7 @@ app.post('/mine', (req,res) => {
     const block = bc.addBlock(req.body.data);
     console.log(`new Block Added : ${block.toString()}`)
 
+    p2pServer.syncChain();
     res.redirect('/blocks');
 
 })

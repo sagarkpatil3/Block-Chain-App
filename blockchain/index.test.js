@@ -14,7 +14,7 @@ describe('BlockChain', ()=>{
     })
 
     it('it adds a new block', () =>{
-        const data = 'test'
+        const data = 'foo'
         bc.addBlock(data)
         expect(bc.chain[bc.chain.length - 1].data).toEqual(data);
     })
@@ -37,10 +37,10 @@ describe('BlockChain', ()=>{
         expect(bc.isValidChain(bc2.chain)).toBe(false);
     })
 
-    it('replaces the chain with valid chain',()=>{
-        bc2.addBlock('goo')
+    it('replaces the chain with a valid chain', () => {
+        bc2.addBlock('goo');
         bc.replaceChain(bc2.chain);
-
+    
         expect(bc.chain).toEqual(bc2.chain);
     });
 

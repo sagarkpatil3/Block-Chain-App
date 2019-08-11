@@ -1,4 +1,4 @@
-const Block = require('./blockchain/block')
+const Wallet = require('./wallet');
+const wallet = new Wallet()
 
-const fooBlock = Block.mineBlock(Block.genesis(), 'foo-data')
-console.log(fooBlock.toString())
+console.log(wallet.toString());
